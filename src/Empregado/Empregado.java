@@ -62,14 +62,23 @@ public class Empregado {
 
     @Override
     public String toString() {
+        double salario = realizarPagamento();
         return "{ " +
                 "nome: " + getNome() + ", " +
                 "horas: " + getHoras() + ", " +
-                "valorPorHora: " + getValorPorHora()  +
+                "valorPorHora: " + getValorPorHora()  + ", " +
+                "salario: " + salario +
                 " }";
     }
 
     public double realizarPagamento() {
-        return 0.0;
+        if (getHoras() != null && getValorPorHora() != null) {
+            double salMinimo = 1100.0;
+            double totalCalculado = getHoras() * getValorPorHora();
+            return Math.max(totalCalculado, salMinimo);
+        } else {
+            log.warning("Violação de parametros da classe Empregados.");
+            return 0.0;
+        }
     }
 }
