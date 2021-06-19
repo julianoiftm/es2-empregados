@@ -49,7 +49,15 @@ public class Empregado {
     }
 
     public void setValorPorHora(Double valorPorHora) {
-        this.valorPorHora = valorPorHora;
+        try {
+            if(valorPorHora >= 30.0 && valorPorHora <= 200.0) {
+                this.valorPorHora = valorPorHora;
+            } else {
+                log.warning("O valor da hora precisa estar entre R$30 e R$200");
+            }
+        } catch (Exception e) {
+            log.warning(e.getMessage());
+        }
     }
 
     @Override
