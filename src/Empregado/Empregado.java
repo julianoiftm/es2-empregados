@@ -28,7 +28,11 @@ public class Empregado {
     }
 
     public void setHoras(Integer horas) {
-        this.horas = horas;
+        if (horas <= 40) {
+            this.horas = horas;
+        } else {
+             System.out.println("O trabalhador não pode trabalhar mais de 40 horas.");
+        }
     }
 
     public Double getValorPorHora() {
