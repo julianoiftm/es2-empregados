@@ -32,6 +32,7 @@ public class Empregado {
         return horas;
     }
 
+    // classe criada de acordo com o requisito.
     public void setHoras(Integer horas) {
         try {
             if(horas <= 40){
