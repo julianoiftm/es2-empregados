@@ -37,6 +37,7 @@ public class Empregado {
             if(horas <= 40){
                 this.horas = horas;
             } else {
+                this.horas = 0;
                 log.warning("O empregado não pode trabalhar mais de 40h diárias.");
             }
         } catch (Exception e) {
@@ -53,6 +54,7 @@ public class Empregado {
             if(valorPorHora >= 30.0 && valorPorHora <= 200.0) {
                 this.valorPorHora = valorPorHora;
             } else {
+                this.valorPorHora = 0.0;
                 log.warning("O valor da hora precisa estar entre R$30 e R$200");
             }
         } catch (Exception e) {
@@ -62,22 +64,18 @@ public class Empregado {
 
     @Override
     public String toString() {
-        double salario = realizarPagamento();
         return "{ " +
                 "nome: " + getNome() + ", " +
                 "horas: " + getHoras() + ", " +
-                "valorPorHora: " + getValorPorHora()  + ", " +
-                "salario: " + salario +
+                "valorPorHora: " + getValorPorHora()  +
                 " }";
     }
 
-    public double realizarPagamento() {
-        if (getHoras() != null && getValorPorHora() != null) {
-            double salMinimo = 1100.0;
-            double totalCalculado = getHoras() * getValorPorHora();
-            return Math.max(totalCalculado, salMinimo);
+    public static double realizarPagamento(double valorHora, double qtdeHoras) {
+        double salarioMinimo = 1100.0;
+        if(valorHora != 0.0 && qtdeHoras != 0){
+            return Math.max((valorHora * qtdeHoras), salarioMinimo);
         } else {
-            log.warning("Violação de parametros da classe Empregados.");
             return 0.0;
         }
     }
