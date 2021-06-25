@@ -1,7 +1,13 @@
 package Empregado;
 
+import lombok.*;
 import java.util.logging.Logger;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Empregado {
 
     private static final Logger log = Logger.getLogger(Empregado.class.getName());
@@ -9,28 +15,6 @@ public class Empregado {
     private String nome;
     private Integer horas;
     private Double valorPorHora;
-
-    public Empregado() {
-        super();
-    }
-
-    public Empregado(String nome, Integer horas, Double valorPorHora) {
-        this.nome = nome;
-        this.horas = horas;
-        this.valorPorHora = valorPorHora;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Integer getHoras() {
-        return horas;
-    }
 
     public void setHoras(Integer horas) {
         try {
@@ -44,11 +28,6 @@ public class Empregado {
             log.warning(e.getMessage());
         }
     }
-
-    public Double getValorPorHora() {
-        return valorPorHora;
-    }
-
     public void setValorPorHora(Double valorPorHora) {
         try {
             if(valorPorHora >= 30.0 && valorPorHora <= 200.0) {
@@ -60,15 +39,6 @@ public class Empregado {
         } catch (Exception e) {
             log.warning(e.getMessage());
         }
-    }
-
-    @Override
-    public String toString() {
-        return "{ " +
-                "nome: " + getNome() + ", " +
-                "horas: " + getHoras() + ", " +
-                "valorPorHora: " + getValorPorHora()  +
-                " }";
     }
 
     public static double realizarPagamento(double valorHora, double qtdeHoras) {
