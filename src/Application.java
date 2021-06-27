@@ -3,7 +3,6 @@ import Empregado.EmpregadoTercerizado;
 
 public class Application {
     public static void main(String[] args) {
-        testeEmpregado();
         testeEmpregadoTeceiro();
     }
 
@@ -20,8 +19,8 @@ public class Application {
         EmpregadoTercerizado emp2 = new EmpregadoTercerizado();
         emp2.setNome("José da Silva II");
         emp2.setHoras(36);
-        emp2.setValorPorHora(115.50);
-        emp2.setAdicional(300.00);
-        System.out.println(emp2);
+        emp2.setValorPorHora(100.0);
+        emp2.setAdicional(1200.0);
+        System.out.println("Pagamento: " + emp2.realizarPagamento());
     }
 }
