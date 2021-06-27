@@ -1,9 +1,8 @@
 import Empregado.Empregado;
-import Empregado.EmpregadoTercerizado;
+import Empregado.EmpregadoTerceirizado;
 
 public class Application {
     public static void main(String[] args) {
-        testeEmpregado();
         testeEmpregadoTeceiro();
     }
 
@@ -17,11 +16,11 @@ public class Application {
     }
 
     public static void testeEmpregadoTeceiro() {
-        EmpregadoTercerizado emp2 = new EmpregadoTercerizado();
+        EmpregadoTerceirizado emp2 = new EmpregadoTerceirizado();
         emp2.setNome("José da Silva II");
         emp2.setHoras(36);
-        emp2.setValorPorHora(115.50);
-        emp2.setAdicional(300.00);
-        System.out.println(emp2);
+        emp2.setValorPorHora(100.0);
+        emp2.setAdicional(1200.0);
+        System.out.println("Pagamento: " + emp2.realizarPagamento());
     }
 }
