@@ -1,5 +1,5 @@
 import Empregado.Empregado;
-import Empregado.EmpregadoTercerizado;
+import Empregado.EmpregadoTerceirizado;
 
 public class Application {
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class Application {
     }
 
     public static void testeEmpregadoTeceiro() {
-        EmpregadoTercerizado emp2 = new EmpregadoTercerizado();
+        EmpregadoTerceirizado emp2 = new EmpregadoTerceirizado();
         emp2.setNome("José da Silva II");
         emp2.setHoras(36);
         emp2.setValorPorHora(100.0);

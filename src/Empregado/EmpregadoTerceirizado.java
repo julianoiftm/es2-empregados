@@ -1,10 +1,10 @@
 package Empregado;
 
-public class EmpregadoTercerizado extends Empregado {
+public class EmpregadoTerceirizado extends Empregado {
 
     private Double adicional;
 
-    public EmpregadoTercerizado() {
+    public EmpregadoTerceirizado() {
         super();
     }
 
