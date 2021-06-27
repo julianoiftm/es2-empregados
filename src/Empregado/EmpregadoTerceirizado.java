@@ -13,7 +13,7 @@ public class EmpregadoTerceirizado extends Empregado {
     }
 
     public void setAdicional(Double adicional) {
-        if (adicional < 100.0 || adicional > 1100.0) throw new IllegalArgumentException("O adicional precisa estar entre R$100 e R$1.100");
+        if (adicional < 100.0 || adicional > 1100.0) throw new IllegalArgumentException("O adicional precisa estar entre R$100 e R$1.100!!");
         this.adicional = adicional;
     }
 
