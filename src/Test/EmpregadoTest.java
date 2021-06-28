@@ -24,14 +24,6 @@ public class EmpregadoTest {
     }
 
     /**
-     * Testar hora menor 40
-     */
-    @Test
-    public void avaliaEntradaHoraMenorQuarenta() {
-        assertThrows(RuntimeException.class, () -> emp.setHoras(20));
-    }
-
-    /**
      * Testar valor por hora menor que 30
      */
     @Test
@@ -48,21 +40,13 @@ public class EmpregadoTest {
     }
 
     /**
-     * Testar valor por hora maior que 30 e menor que 200
-     */
-    @Test
-    public void avaliaEntradaValorPorHoraMaiorTrintaMenorDuzentos() {
-        assertThrows(RuntimeException.class, () -> emp.setValorPorHora(150.0));
-    }
-
-    /**
      * Testar realizar pagamento setHora, setValorPorHora, setAdicional
      */
     @Test
     public void avaliaRealizarPagamento() {
         emp.setNome("José da Silva II");
-        emp.setHoras(45);
-        emp.setValorPorHora(300.0);
+        emp.setHoras(0);
+        emp.setValorPorHora(90.0);
         assertThrows(RuntimeException.class, () -> emp.realizarPagamento());
     }
 
@@ -72,8 +56,8 @@ public class EmpregadoTest {
     @Test
     public void avaliaRealizarPagamentoTwo() {
         emp.setNome("José da Silva II");
-        emp.setHoras(36);
-        emp.setValorPorHora(300.0);
+        emp.setHoras(11);
+        emp.setValorPorHora(110.0);
         assertThrows(RuntimeException.class, () -> emp.realizarPagamento());
     }
 
@@ -83,7 +67,7 @@ public class EmpregadoTest {
     @Test
     public void avaliaRealizarPagamentoThree() {
         emp.setNome("José da Silva II");
-        emp.setHoras(30);
+        emp.setHoras(11);
         emp.setValorPorHora(100.0);
         assertThrows(RuntimeException.class, () -> emp.realizarPagamento());
     }
