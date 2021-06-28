@@ -18,8 +18,7 @@ public class EmpregadoTerceirizado extends Empregado {
     }
 
     public double realizarPagamento() {
-        return (getValorPorHora() != 0.0 && getHoras() != 0 && getAdicional() != 0.0)
-                ? Math.max(((getValorPorHora() * getHoras()) + getAdicional()), 1100.0)
-                : 0.0;
+        if (getValorPorHora() == 0.0 || getHoras() == 0 || getAdicional() == 0.0) throw new IllegalArgumentException("Valor por hora, nem a hora podem serem '0'!!");
+        return Math.max(((getValorPorHora() * getHoras()) + getAdicional()), 1100.0);
     }
 }
