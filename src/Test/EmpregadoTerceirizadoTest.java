@@ -24,14 +24,6 @@ public class EmpregadoTerceirizadoTest {
     }
 
     /**
-     * Testar hora menor 40
-     */
-    @Test
-    public void avaliaEntradaHoraMenorQuarenta() {
-        assertThrows(RuntimeException.class, () -> empTerc.setHoras(20));
-    }
-
-    /**
      * Testar valor por hora menor que 30
      */
     @Test
@@ -45,14 +37,6 @@ public class EmpregadoTerceirizadoTest {
     @Test
     public void avaliaEntradaValorPorHoraMaiorDuzentos() {
         assertThrows(RuntimeException.class, () -> empTerc.setHoras(201));
-    }
-
-    /**
-     * Testar valor por hora maior que 30 e menor que 200
-     */
-    @Test
-    public void avaliaEntradaValorPorHoraMaiorTrintaMenorDuzentos() {
-        assertThrows(RuntimeException.class, () -> empTerc.setValorPorHora(150.0));
     }
 
     /**
@@ -72,22 +56,14 @@ public class EmpregadoTerceirizadoTest {
     }
 
     /**
-     * Testar adicional maior que 100 e menor que 1100
-     */
-    @Test
-    public void avaliaEntradaAdicionalMaiorCemMenorMilCem() {
-        assertThrows(RuntimeException.class, () -> empTerc.setAdicional(400.0));
-    }
-
-    /**
      * Testar realizar pagamento setHora, setValorPorHora, setAdicional
      */
     @Test
     public void avaliaRealizarPagamento() {
         empTerc.setNome("José da Silva II");
-        empTerc.setHoras(45);
-        empTerc.setValorPorHora(300.0);
-        empTerc.setAdicional(50.0);
+        empTerc.setHoras(0);
+        empTerc.setValorPorHora(150.0);
+        empTerc.setAdicional(100.0);
         assertThrows(RuntimeException.class, () -> empTerc.realizarPagamento());
     }
 
@@ -97,9 +73,9 @@ public class EmpregadoTerceirizadoTest {
     @Test
     public void avaliaRealizarPagamentoTwo() {
         empTerc.setNome("José da Silva II");
-        empTerc.setHoras(36);
-        empTerc.setValorPorHora(150.0);
-        empTerc.setAdicional(1200.0);
+        empTerc.setHoras(11);
+        empTerc.setValorPorHora(100.0);
+        empTerc.setAdicional(100.0);
         assertThrows(RuntimeException.class, () -> empTerc.realizarPagamento());
     }
 
@@ -109,9 +85,9 @@ public class EmpregadoTerceirizadoTest {
     @Test
     public void avaliaRealizarPagamentoThree() {
         empTerc.setNome("José da Silva II");
-        empTerc.setHoras(30);
+        empTerc.setHoras(10);
         empTerc.setValorPorHora(100.0);
-        empTerc.setAdicional(400.0);
+        empTerc.setAdicional(100.0);
         assertThrows(RuntimeException.class, () -> empTerc.realizarPagamento());
     }
 }
