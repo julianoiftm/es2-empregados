@@ -2,6 +2,8 @@ package Empregado;
 
 import lombok.*;
 
+// classe criada de acordo com os requisitos
+
 @Getter
 @Setter
 @NoArgsConstructor

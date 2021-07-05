@@ -1,5 +1,7 @@
 package Empregado;
 
+// classe criada de acordo com os requisitos
+
 public class EmpregadoTerceirizado extends Empregado {
 
     private Double adicional;
